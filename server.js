@@ -4,7 +4,7 @@ let server = require('http').Server(app);
 let io = require('socket.io')(server);
 let stream = require('./src/stream');
 let path = require('path');
-let port = 3000
+var port = process.env.PORT || 8080;
 
 app.use('/assets', express.static(path.join(__dirname, '/src/assets')));
 
