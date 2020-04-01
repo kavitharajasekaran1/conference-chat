@@ -6,11 +6,12 @@ let stream = require('./src/stream');
 let path = require('path');
 let port = 3000
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/assets', express.static(path.join(__dirname, '/src/assets')));
 
 app.get('/', (req, res)=>{
-    res.sendFile(__dirname+'/index.html');
+    res.sendFile(__dirname+'/src/index.html');
 });
+// app.use(express.static(__dirname + './src/index.html'));
 
 
 io.of('/stream').on('connection', stream);
