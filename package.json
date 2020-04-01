@@ -1,7 +1,7 @@
 {
-  "name": "livestream-server",
+  "name": "conference-chat",
   "version": "0.0.1",
-  "description": "A conference call implementation using WebRTC, Socket.io and Node.js.",
+  "description": "implementaion of conference-chat",
   "main": "src/app.js",
   "dependencies": {
     "express": "^4.17.1",
@@ -20,13 +20,13 @@
     "url": "https://github.com/kavitharajasekaran1/conference-chat"
   },
   "keywords": [
-    "LiveStream",
+ 
     "Server"
   ],
-  "author": "Amir Sanni <amirsanni@gmail.com>",
-  "license": "ISC",
+  "author": "kavitha",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/amirsanni/livestream-server/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/amirsanni/livestream-server#readme"
+"
 }
