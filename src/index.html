@@ -37,6 +37,9 @@
                 <button class="btn btn-sm rounded-0 btn-no-effect text-white">
                     <a href="/" class="text-white text-decoration-none">Leave Chat</a>
                 </button>
+                <p><button id="start">Start Capture</button>&nbsp;<button id="stop">Stop Capture</button></p>
+
+
             </div>
         </nav>
        <br/><br/>
@@ -96,6 +99,7 @@
         <div class="container-fluid room-comm" hidden>
             <div class="row ">
                 <video class="local-video" id='local' volume='0' autoplay muted></video>
+                <video id="video" autoplay></video>
             </div>
             
             <div class="row">
@@ -122,6 +126,52 @@
             $('.local-video').click(function(){this.paused?this.play():this.pause();});
             }
 
+
+            window.addEventListener('load', ()=>{
+            const videoElem = document.getElementById("video");
+const logElem = document.getElementById("log");
+const startElem = document.getElementById("start");
+const stopElem = document.getElementById("stop");
+
+// Options for getDisplayMedia()
+
+var displayMediaOptions = {
+  video: {
+    cursor: "always"
+  },
+  audio: false
+};
+
+// Set event listeners for the start and stop buttons
+startElem.addEventListener("click", function(evt) {
+  startCapture();
+}, false);
+
+stopElem.addEventListener("click", function(evt) {
+  stopCapture();
+}, false);
+
+async function startCapture() {
+//   logElem.innerHTML = "";
+
+  try {
+    videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+    dumpOptionsInfo();
+  } catch(err) {
+    console.error("Error: " + err);
+  }
+}
+
+function stopCapture(evt) {
+  let tracks = videoElem.srcObject.getTracks();
+
+  tracks.forEach(track => track.stop());
+  videoElem.srcObject = null;
+}
+            })
+
         </script>
     </body>
 </html>
+
+
