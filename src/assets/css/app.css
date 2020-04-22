@@ -11,6 +11,15 @@
     padding-top: 15px;
     min-height: 90vh;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#00008B;
+    color: white;
+    text-align: center;
+  }
 
 #chat-messages{
     height: 70vh;
@@ -173,3 +182,147 @@
   div.scrollmenu a:hover {
     background-color: #777;
   }
+
+  /*===============================================================*/
+  /*===========================================*/
+  .circle {
+    background: lightblue;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+	top:-81px;
+	bottom: -43px;
+	left: 50px;
+	right: 0;
+  	
+	margin: auto;
+
+}
+
+
+  
+
+button.btn-settings {
+    margin: 25px;
+    padding: 20px 30px;
+    font-size: 1.2em;
+    background-color: #337ab7;
+    color: white;
+  }
+  button.btn-settings:active {
+    color: white;
+  }
+  /* .modal {
+      overflow: hidden;
+  }
+  .modal-dialog {
+      margin-right: 0;
+      margin-left: 0;
+  }
+  .modal-header {
+    height:30px;
+    padding: 20px;
+    background-color:#18456b;
+    color:white;
+  }
+  .modal-title {
+    margin-top:-10px;
+    font-size:16px;
+  }
+  .modal-header .close {
+    margin-top:-10px;
+    color:#fff;
+  }
+  .modal-body {
+    color:#888;
+    padding: 5px 35px 20px;
+  }
+  .modal-body h3 {
+    text-align: center;
+  }
+  .modal-body p {
+    padding-top:10px;
+    font-size: 1.1em;
+  }
+
+  #myModal {
+    position: relative;
+  }
+  
+  .modal-dialog {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  } */
+  /* #myModal {
+    position: relative;
+  }
+  
+  .modal-dialog {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  } */
+  button.btn-settings {
+    margin: 25px;
+    padding: 20px 30px;
+    font-size: 1.2em;
+    background-color: #337ab7;
+    color: white;
+  }
+  button.btn-settings:active {
+    color: white;
+  }
+  body.modal-open {
+    overflow: hidden;
+}
+.min {
+  width: 250px;
+  height: 35px;
+  overflow: hidden !important;
+  padding: 0px !important;
+  margin: 0px;
+  float: left;
+  position: static !important;
+}
+
+.min .modal-dialog, .min .modal-content {
+  height: 100%;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.min .modal-header {
+  height: 100%;
+  width: 100%;
+  margin: 0px !important;
+  padding: 3px 5px !important;
+}
+
+.display-none { display: none; }
+
+button .fa {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.min .fa { font-size: 14px; }
+
+.min .menuTab { display: none; }
+
+button:focus { outline: none; }
+
+.minmaxCon {
+  height: 35px;
+  bottom: 1px;
+  left: 1px;
+  position: fixed;
+  right: 1px;
+  z-index: 9999;
+}
+.modal-backdrop {background: none;}
+

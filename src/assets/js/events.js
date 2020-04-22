@@ -87,4 +87,7 @@ window.addEventListener('load', ()=>{
             document.querySelector('#err-msg-username').innerHTML = "Please input your name";
         }
     });
+    if(sessionStorage.getItem('username') !=null){
+        socket.emit('username1',sessionStorage.getItem('username'))
+    }
 })

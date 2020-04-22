@@ -4,7 +4,7 @@ export default {
     },
 
 
-    closeVideo(elemId){
+    closeVideo(elemId,value){
         if(document.getElementById(elemId)){
             document.getElementById(elemId).remove();
         }

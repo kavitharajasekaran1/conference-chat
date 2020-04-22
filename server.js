@@ -16,4 +16,64 @@ app.get('/', (req, res)=>{
 
 io.of('/stream').on('connection', stream);
 
+// var count = 0;
+
+var $ipsConnected = [];
+
+
+
+io.on('connection', function (socket) {
+    let count = Object.keys(io.sockets.sockets).length;
+    console.log(count,"real count")
+
+
+
+//   var $ipAddress = socket.handshake.address;
+
+//   if (!$ipsConnected.hasOwnProperty($ipAddress)) {
+
+//   	$ipsConnected[$ipAddress] = 1;
+
+//   	count++;
+
+  	socket.emit('counter', {count:count});
+
+  
+
+
+
+  console.log("client is connected");
+   /* Disconnect socket */
+
+   socket.on('disconnect', function() {
+
+    // if ($ipsConnected.hasOwnProperty($ipAddress)) {
+    let count = Object.keys(io.sockets.sockets).length;
+
+
+      count--;
+
+      socket.emit('counter', {count:count});
+
+    //}
+
+});
+socket.on('username1', function(username) {
+    console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    socket.username = username;
+    // socket.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
+    if(socket.username !=undefined){
+    io.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
+    console.log(socket.username,"username in server")
+    }
+
+});
+socket.on('disconnect', function(username) {
+    if(socket.username !=undefined){
+        console.log("uuuuuuu")
+    io.emit('is_online', '🔴 <i>' + socket.username + ' left the chat..</i>');
+    }
+})
+})
+
 server.listen(port, () => console.log(`Active on ${port} port`));

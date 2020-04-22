@@ -8,13 +8,34 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel='stylesheet' href='assets/css/app.css' type="text/css">
-        <script src="jquery-3.4.1.min.js"></script>
+        <!-- <script src="jquery-3.4.1.min.js"></script> -->
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!------------------------------------------------------------------------------------>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
 
         <script src='/socket.io/socket.io.js'></script>
         <script type="module" src='assets/js/rtc.js'></script>
         <script type="module" src='assets/js/events.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/7.3.0/adapter.min.js" integrity="sha256-2qQheewaqnZlXJ3RJRghVUwD/3fD9HNqxh4C+zvgmF4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -64,7 +85,7 @@
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3">
-                    <button id='create-room' class="btn btn-block rounded-0 btn-info">Create Chat</button>
+                    <button id='create-room' class="btn btn-block rounded-0 btn-info" >Create Chat</button>
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3" id='room-created'></div>
@@ -89,7 +110,7 @@
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3">
-                    <button id='enter-room' class="btn btn-block rounded-0 btn-info">Enter Into Chat</button>
+                    <button id='enter-room' class="btn btn-block rounded-0 btn-info" >Enter Into Chat</button>
                 </div>
             </div>
         </div>
@@ -99,10 +120,64 @@
         <div class="container-fluid room-comm" hidden>
             <div class="row ">
                 <video class="local-video" id='local' volume='0' autoplay muted></video>
-                <video id="video" autoplay></video>
+                <video id="video" autoplay="true"></video>
+                <!-- <canvas id="preview"></canvas> -->
+                <img src="" id="play" class="center">
+                <div style="position: absolute; top: 50px; left: 50px;">
+
+                    <canvas id="preview" width="1000" height="1000">
+                     Your browser does not support HTML5 Canvas.
+                    </canvas>
+                    </div>
+   <div id="logger"></div>
             </div>
+
+
+
+
+   
+
+ <div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h4 class="modal-title">Users Status</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <button class="close modalMinimize"> <i class='fa fa-minus'></i> </button>
+      </div>
+      
+      <div class="modal-body">
+        <ul id="    1`messages"></ul>
+        <!-- <p>I had not used a load balancer. Both the client and server used the 2.0.3 version of Socket.io (I can't remember all version I used). I do not know which browser is causing the problem However, most users have used Chrome. In my case, the disconnect was randomely so it can't reproduce.
+          And I changed to ws. I am not sure if the problem is solved.</p>
+          <p>I had not used a load balancer. Both the client and server used the 2.0.3 version of Socket.io (I can't remember all version I used). I do not know which browser is causing the problem However, most users have used Chrome. In my case, the disconnect was randomely so it can't reproduce.
+            And I changed to ws. I am not sure if the problem is solved.</p>
+        <p>I had not used a load balancer. Both the client and server used the 2.0.3 version of Socket.io (I can't remember all version I used). I do not know which browser is causing the problem However, most users have used Chrome. In my case, the disconnect was randomely so it can't reproduce.
+          And I changed to ws. I am not sure if the problem is solved.</p>
+          <p>I had not used a load balancer. Both the client and server used the 2.0.3 version of Socket.io (I can't remember all version I used). I do not know which browser is causing the problem However, most users have used Chrome. In my case, the disconnect was randomely so it can't reproduce.
+            And I changed to ws. I am not sure if the problem is solved.</p> -->
+       
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+      <div class="minmaxCon"></div>  
+
+    </div>
+  </div>`   `   
+</div>
+
+
+
+
+
+
+
+
             
-            <div class="row">
+            <div class="row" id="chat">
                 <div class="col-md-9 mt-3 mb-3 main">
                     <div class="row" id='videos'></div>
                 </div>
@@ -112,63 +187,122 @@
                         <div class="col-12 text-center h2 mb-3">CHAT</div>
                     </div>
 
-                    <div id='chat-messages'></div>
+                    <div id='chat-messages'></div>              
+                   
+
 
                     <div class="row">
                         <textarea id='chat-input' class="form-control rounded-0 chat-box border-info" rows='3' placeholder="Type here..."></textarea>
                     </div>
+                    <div class="footer">
+                        <div class="circle center" id="counter"></div>
+                        <i class="fa fa-bell" id="bell" onclick="myFunction()" data-backdrop="false" data-toggle="modal" style="font-size:38px;color:white"></i>
+
+
+                          <p></p>
+                      </div>
                 </div>
             </div>
         </div>
         <script>
-            function test(){
-                console.log(this.paused)
-            $('.local-video').click(function(){this.paused?this.play():this.pause();});
-            }
 
 
-            window.addEventListener('load', ()=>{
-            const videoElem = document.getElementById("video");
-const logElem = document.getElementById("log");
-const startElem = document.getElementById("start");
-const stopElem = document.getElementById("stop");
+var socket = io.connect("http://localhost:8080");
 
-// Options for getDisplayMedia()
 
-var displayMediaOptions = {
-  video: {
-    cursor: "always"
-  },
-  audio: false
-};
 
-// Set event listeners for the start and stop buttons
-startElem.addEventListener("click", function(evt) {
-  startCapture();
-}, false);
 
-stopElem.addEventListener("click", function(evt) {
-  stopCapture();
-}, false);
 
-async function startCapture() {
-//   logElem.innerHTML = "";
 
-  try {
-    videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-    dumpOptionsInfo();
-  } catch(err) {
-    console.error("Error: " + err);
+
+
+
+
+
+$(function() {
+
+//This setTimeout function execute or call automatically when 5 second completed.
+setTimeout(function() {
+    console.log(count,"disnide settime out")
+  $("#counter").text() = count;
+}, 5000);
+             })
+
+
+
+function myFunction() {
+    $('#myModal').modal('show');
+    if (!($('.modal.in').length)) {
+    $('.modal-dialog').css({
+      top: 0,
+      left: 0
+    });
   }
+  $('#myModal').modal({
+    backdrop: false,
+    show: true
+  });
+
+  
+
 }
 
-function stopCapture(evt) {
-  let tracks = videoElem.srcObject.getTracks();
 
-  tracks.forEach(track => track.stop());
-  videoElem.srcObject = null;
-}
-            })
+// document.getElementById('enter-room').addEventListener('click', (e)=>{
+//             e.preventDefault();
+//             console.log($("#username"). val())
+//            let  username = $("#username"). val()
+//             // socket.emit('username',username)
+//             sendvalue(username)
+            
+
+//             setTimeout(()=>{
+//                 username = '';
+//             }, 50);
+        
+//     });
+// document.getElementById('create-room').addEventListener('click', (e)=>{
+
+// alert("hiiii")
+//     e.preventDefault();
+//     console.log($("#your-name"). val())
+//     let username =$("#your-name"). val()
+//         sendvalue(username)                
+
+//     setTimeout(()=>{
+//         username = '';
+//     }, 50);
+
+// });
+
+
+
+            socket.on('counter', function (data) {
+    console.log(data.count,"counter====>>>")
+    var count = data.count
+
+    document.getElementById("counter").innerHTML=data.count;
+   
+  
+  });
+  socket.on('is_online', (data) =>{
+                console.log(data,"is_online")
+                if(data!=undefined){
+                            $('#messages').append($('<li>').html(data));
+                            }
+                        })
+
+                    
+
+  
+ 
+         
+
+
+
+
+
+           // })
 
         </script>
     </body>
